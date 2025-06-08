@@ -1,5 +1,166 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head><meta charset="UTF-8"><title>Intertechnostar</title></head>
-<body><p>Замените этот файл на финальную версию из конструктора сайта.</p></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intertechnostar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #1c2a4d;
+      --accent-color: #93c01f;
+      --bg-color: #ffffff;
+      --text-color: #212121;
+      --light-bg: #f1f3f6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--light-bg);
+      color: var(--text-color);
+      margin: 0; padding: 0;
+    }
+    header {
+      background-color: var(--main-color);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex; justify-content: center;
+      flex-wrap: wrap; gap: 2rem;
+      margin-top: 1rem;
+    }
+    nav a {
+      color: white; font-weight: 600;
+      text-decoration: none;
+    }
+    .lang-toggle {
+      position: absolute; top: 1rem; right: 1rem;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+      background: var(--bg-color);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: var(--main-color);
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: disc;
+      margin-left: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+    .partner-card {
+      text-align: center;
+    }
+    .partner-card img {
+      max-width: 120px;
+      height: auto;
+    }
+    footer {
+      background-color: var(--main-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    @media (max-width: 600px) {
+      nav { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-toggle">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+  <header>
+    <h1>Intertechnostar</h1>
+    <p>Комплексные инженерные решения и сервисное сопровождение в сфере IT и промышленной автоматизации</p>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#directions">Направления</a>
+      <a href="#partners">Партнёры</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>О компании</h2>
+      <p>Intertechnostar предоставляет полный спектр инженерных решений и сервисных услуг в области информационных технологий, промышленной автоматизации и цифровой трансформации предприятий. Наша команда экспертов реализует проекты любой сложности, обеспечивая индивидуальный подход, высокое качество и поддержку на всех этапах.</p>
+    </section>
+
+    <section id="directions">
+      <h2>Основные направления</h2>
+      <div class="grid">
+        <div>
+          <h3>ИТ‑инфраструктура</h3>
+          <ul>
+            <li>Проектирование и внедрение ИТ‑систем</li>
+            <li>Информационная безопасность</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Автоматизация</h3>
+          <ul>
+            <li>Интеграция SCADA и MES</li>
+            <li>Цифровизация производственных процессов</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Сервис и поддержка</h3>
+          <ul>
+            <li>Аудит и консалтинг</li>
+            <li>Техническая поддержка и сопровождение</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners">
+      <h2>Наши партнёры</h2>
+      <div class="grid">
+        <div class="partner-card"><img src="images/aws.png" alt="AWS"><p>AWS</p></div>
+        <div class="partner-card"><img src="images/sap.png" alt="SAP"><p>SAP</p></div>
+        <div class="partner-card"><img src="images/auxo.png" alt="AUXO"><p>AUXO</p></div>
+        <div class="partner-card"><img src="images/itpark.png" alt="IT Park"><p>IT Park</p></div>
+        <div class="partner-card"><img src="images/trexdcas.png" alt="TrexDcas"><p>TrexDcas</p></div>
+        <div class="partner-card"><img src="images/microsoft.png" alt="Microsoft"><p>Microsoft</p></div>
+      </div>
+    </section>
+
+    <section id="contacts">
+      <h2>Контактная информация</h2>
+      <p>Email: info@intertechnostar.com</p>
+      <p>Телефон: +7 (495) 123‑45‑67</p>
+      <p>Адрес: Москва, ул. Примерная, д. 10</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Intertechnostar. Все права защищены.</p>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
+</body>
 </html>
