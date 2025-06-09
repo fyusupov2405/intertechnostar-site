@@ -1,1 +1,16 @@
-body { font-family: sans-serif; background: #f4f4f4; color: #111; margin: 0; padding: 0; }
+
+body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #222; }
+header { background: #1b365d; color: white; padding: 1rem 2rem; }
+header h1 { margin: 0; }
+nav a { color: white; margin-right: 1rem; text-decoration: none; font-weight: bold; }
+main { padding: 2rem; background: white; margin: 1rem; border-radius: 8px; }
+section { margin-bottom: 2rem; }
+.carousel { display: flex; gap: 1rem; overflow-x: auto; padding: 1rem 0; }
+.carousel-item { min-width: 200px; background: #eaeaea; padding: 1rem; border-radius: 8px; flex-shrink: 0; }
+form { display: flex; flex-direction: column; gap: 0.5rem; max-width: 400px; }
+input, textarea { padding: 0.5rem; font-size: 1rem; border: 1px solid #ccc; border-radius: 4px; }
+button { background: #1b365d; color: white; border: none; padding: 0.75rem; cursor: pointer; }
+footer { text-align: center; padding: 1rem; background: #1b365d; color: white; margin-top: 2rem; }
+@media (max-width: 600px) {
+  .carousel { flex-direction: column; }
+}
